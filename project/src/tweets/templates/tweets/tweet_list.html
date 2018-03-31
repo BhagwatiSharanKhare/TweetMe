@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% load recommended %}
+{% block title %} TweetMe {% endblock title %}
+{% block script %}
+
+<script>
+
+
+$(document).ready(function(){
+loadTweetContainer("tweet-container")
+});
+
+</script>
+
+{% endblock script %}
+
+{% block content %}
+<br/><br/><br/><p></p>
+  <div class="container">
+
+
+
+
+   <div class="row">
+      <div class='col-sm-2 col-xs-12' id="det">
+
+         <span id="username"><a id="usernamelink" href="{{ object.get_list_url }}/{{ request.user}}">{{ request.user }}</a></span>
+         <br/><br/>
+         <h3 class="lead">Following - {{ request.user.profile.get_following.count }}</h3>
+         {% for user in request.user.profile.get_following %}
+         <a href="/{{ user.username }}">{{ user.username }}</a> |
+         {% empty %}
+         Not Following any user
+         {% endfor %}
+
+
+
+         <br/><br/>
+         <h3 class="lead">Followers - {{ request.user.followed_by.all.count}}</h3>
+         {% for profile in request.user.followed_by.all %}
+         <a href="/{{ profile.user.username }}">{{ profile.user.username }}</a> |
+         {% empty %}
+         No Followers
+         {% endfor %}
+
+         <br/><br/>
+         <h3 class="lead">People you may know</h3>
+
+         {% recommended request.user %}
+      </div>
+
+      <div class="col-sm-9 col-xs-12 col-sm-offset-1">
+        {% if not request.GET.q %}
+          <div>
+                {% include "tweets/form.html" with form=create_form action_url=create_url btn_title='Tweet' form_class='tweet-form' %}
+          </div>
+
+        {% endif %}<hr/>
+
+        <div id="tweet-container" data-url='/api/tweet/'>
+
+        </div>
+
+        <a href="#" id="loadmore">Load More Tweets</a>
+
+
+
+
+
+      </div>
+        </div>
+      </div>
+      {% endblock content %}

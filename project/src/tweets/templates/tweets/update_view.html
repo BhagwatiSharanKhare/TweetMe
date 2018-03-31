@@ -1,0 +1,65 @@
+
+{% extends "base.html" %}
+{% block title %} Edit Tweets {% endblock title %}
+{% block script %}
+
+<script>
+
+
+$(document).ready(function(){
+  var charsStart = 400;
+  var charsCurrent = 0;
+  $(".update-form").append("<span class='tweetCharsLeft' style='margin-left:5px '>" + charsStart + " left" +"</span>")
+
+  $(".update-form textarea").keyup(function(event){
+    // console.log(event.key, event.timeStamp)
+    var tweetValue = $(this).val()
+    charsCurrent = charsStart -tweetValue.length
+    var spanChars = $(this).parent().parent().parent().find(".tweetCharsLeft")
+    spanChars.text(charsCurrent + " left")
+
+
+    if(charsCurrent > 0){
+      // remove classes
+
+      spanChars.removeClass("blue-color")
+      spanChars.removeClass("red-color")
+      spanChars.addClass("black-color")
+
+    } else if (charsCurrent == 0) {
+      // add black class
+      spanChars.removeClass("red-color")
+      spanChars.removeClass("blue-color")
+      spanChars.addClass("black-color")
+
+
+    } else if (charsCurrent < 0) {
+      //add red class
+
+
+      spanChars.removeClass("blue-color")
+      spanChars.removeClass("black-color")
+      spanChars.addClass("red-color")
+
+
+
+    }
+  })
+
+});
+
+</script>
+{% endblock script %}
+
+{% block content %}
+<br/><br/><br/></br>
+      <div class="row">
+      <div class="col-sm-6 col-sm-offset-3">
+        {% include "tweets/form.html" with form=form btn_title='Update' form_class='update-form' %}
+
+        <div id="tweet-container">
+
+        </div>
+      </div>
+     </div>
+{% endblock content %}

@@ -1,0 +1,65 @@
+
+{% extends "base.html" %}
+{% block title %}User Profile{% endblock title %}
+{% block script %}
+
+
+<script>
+
+
+$(document).ready(function(){
+loadTweetContainer("tweet-container")
+});
+
+</script>
+
+{% endblock script %}
+{% block content %}
+
+<br/><br/><br/>
+   <div class="row">
+     <div class ='col-sm-2 col-xs-12' id="det1">
+       <h5 id="userdetail">{{ object.username }}</h5>
+       <!-- <p>Following: {{ object.profile.get_following.count }}</p>
+       <p>Followers: {{ object.followed_by.all.count }}</p> -->
+       <p><a id="follow" class="btn btn-link" href='{{ object.profile.get_follow_url }}'>
+         {% if following %} UnFollow {% else %} Follow {% endif %}
+       </a></p>
+
+       <br/>
+       <h3 class="lead">Following - {{ object.profile.get_following.count }}</h3>
+       {% for user in object.profile.get_following %}
+       <a href="/{{ user.username }}">{{ user.username }}</a> |
+       {% empty %}
+       Not Following any user
+       {% endfor %}
+
+
+       <br/><br/>
+       <h3 class="lead">Followers - {{ object.followed_by.all.count}}</h3>
+       {% for profile in object.followed_by.all %}
+       <a href="/{{ profile.user.username }}">{{ profile.user.username }}</a> |
+       {% empty %}
+       No Followers
+       {% endfor %}
+
+
+
+
+       </div>
+
+     <div id="profilemargin" class="col-sm-9 col-xs-12 col-sm-offset-1" id="det3">
+       <h3>Tweets</h3><hr/>
+       <div id="tweet-container" data-url='/api/{{ object.username }}/tweet/'>
+
+       </div>
+
+      <a href="#" id="loadmore">Load More Tweets</a>
+     </div>
+
+   </div>
+
+
+
+
+{% endblock content %}

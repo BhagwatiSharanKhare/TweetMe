@@ -1,0 +1,203 @@
+.navbar-default{
+  background-color:#a9c5f2;
+  font-size: 18px;
+  font-family: 'Cabin Condensed', sans-serif;
+  height: 55px;
+  color: #023689;
+
+}
+
+#tweet{
+ font-size: 20px;
+ text-align: justify;
+ text-justify: inter-word;
+ font-family: 'Cinzel-Bold', serif;
+
+
+
+}
+
+body{
+  background-color:#a9c5f2;
+  font-size: 18px;
+  font-family: 'Cinzel-Bold', serif;
+
+
+}
+
+#tweetdetails{
+font-size: 14px;
+font-family: 'Cabin Condensed', sans-serif;
+text-decoration: none;
+
+}
+
+#username{
+font-size: 20px;
+font-family: 'Pacifico', cursive;
+margin-left: -1px;
+
+text-transform: uppercase;
+border: 1px;
+
+}
+
+
+textarea.form-control{
+
+  font-size: 14px;
+  font-family: 'Pacifico', cursive;
+  border-color: #337ab7;
+  resize: none;
+
+
+
+}
+
+
+#searchtext{
+  font-size: 14px;
+  font-family: 'Pacifico', cursive;
+  border-color: #337ab7;
+}
+
+
+
+.navbar-brand {
+  padding: 0px;
+}
+.navbar-brand>img {
+  height: 100%;
+  padding:1px;
+  margin: 0px 0px 0px 0px;
+  width: auto;
+  border-radius: 20px;
+}
+
+#a{
+
+  text-align: center;
+}
+
+#userdetail{
+  font-size: 20px;
+  font-family: 'Pacifico', cursive;
+
+
+  text-transform: uppercase;
+
+}
+
+#button{
+  border-radius: 100px;
+
+}
+
+#tweetdetail{
+  font-size: 22px;
+  text-align: justify;
+  text-justify: inter-word;
+  font-family: 'Cinzel-Bold', serif;
+}
+
+
+#tweetme {
+  font-size: 20px;
+  font-family: 'Pacifico', cursive;
+  color: #023689;
+}
+
+#profilemargin{
+  margin-top: -12px;
+
+}
+#usernamelink{
+  text-decoration: none;
+
+
+  }
+
+.tweetCharsLeft{
+  margin-top: 40px;
+  margin-left: 10px;
+
+}
+
+#follow{
+  font-size: 16px;
+  border: 1px solid;
+  border-radius: 100px;
+  margin-left: auto;
+}
+
+.reply-style{
+  border: 1px solid #023689;
+}
+
+.navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover{
+ color: #023689;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:focus, .navbar-default .navbar-nav > .open > a:hover{
+  color: #023689;
+  background-color:#a9c5f2;
+
+}
+
+.navbar-default .navbar-nav > li > a{
+  color: #023689;
+
+}
+
+#password{
+  font-size: 15px;
+  font-family: 'Pacifico', cursive;
+  color: #023689;
+}
+
+#loginlabel{
+  font-size: 22px;
+  font-family: 'Cinzel-Bold', serif;
+
+
+}
+
+label{
+  font-weight: 100;
+}
+
+#loginbutton{
+  border-radius: 50px;
+  border-color:#286090;
+}
+
+#registerbutton{
+text-align: center;
+}
+
+.has-error .checkbox, .has-error .checkbox-inline, .has-error .control-label, .has-error .help-block, .has-error .radio, .has-error .radio-inline, .has-error.checkbox label, .has-error.checkbox-inline label, .has-error.radio label, .has-error.radio-inline label{
+  color: black;
+  font-weight: 100;
+
+}
+
+#resetbutton{
+  width: 250px;
+}
+#resetemailbutton{
+  width: 300px;
+}
+
+#det{
+  margin-left: -45px;
+}
+#det1{
+  margin-left: -30px;
+}
+#det2{
+  margin-left: -30px;
+}
+
+#loadmore{
+  color: #245987;
+  
+}

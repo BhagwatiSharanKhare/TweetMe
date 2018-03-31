@@ -1,0 +1,51 @@
+
+{% extends "base.html" %}
+{% block title %}Your Tweet{% endblock title %}
+
+{% block script %}
+
+<script>
+
+
+$(document).ready(function(){
+loadTweetContainer("tweet-container", {{ object.id }})
+});
+
+</script>
+
+{% endblock script %}
+
+{% block content %}
+<br/><br/><br/>
+   <div class="row">
+     <div class ='col-sm-3 col-xs-12' id="det2" >
+
+       <h5 id="userdetail">{{ object.user }}</h5>
+       <h5>{{ object.updated }} <br/></h5>
+       <h5>{{ object.updated|timesince }} ago<br/></h5>
+       <!-- <div class="row">
+         <div class='col-sm-6 col-lg-4'>
+            <h4><a href="{{ object.get_update_url}}">Update</a></h4>
+        </div>
+        <div class='col-sm-6 col-lg-4'>
+          <h4><a href="{{ object.get_delete_url}}">Delete</a></h4>
+
+       </div> -->
+     </div>
+
+
+     <div id="tweetdetail" class="col-sm-9 col-xs-12" >
+       <div id="tweet-container">
+
+       </div>
+
+
+
+     </div>
+
+   </div>
+
+
+</div>
+
+{% endblock content %}

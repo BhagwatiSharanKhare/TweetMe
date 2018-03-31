@@ -1,0 +1,25 @@
+<!-- <form action="{% url "tweet:list" %}" method="GET" >
+  <input type="text" name="q" placeholder="search" value="{{ request.GET.q }}">
+  <input type="submit" name="" value="Search">
+
+</form> -->
+
+
+    <!-- <form class="navbar-form navbar-center" action="{% url "tweet:list" %}" method="GET" >
+
+        <div class="form-group">
+           <input id="searchtext" type="text" name="q" class="form-control" placeholder="Search" value="{{ request.GET.q }}">
+           <input id="button" type="submit" class="btn btn-primary" value="Search">
+        </div>
+
+    </form> -->
+
+    <form id='navbar-search-form' class="navbar-form navbar-center" method='GET' action='{% url "search" %}'>
+       <div class="form-group">
+         <input id="searchtext" type="text" name="q" class="form-control" placeholder="Search" value="{{ request.GET.q }}">
+
+           </div>
+           <input id="button" type="submit" class="btn btn-primary" value="Search">
+
+
+</form>
